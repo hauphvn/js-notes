@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+A:
+<input id="a" type="number">
+B: <input id="b" type="number">
+<p>Sum: <span id="result"></span></p>
+
+<script>
+    const runningEffects = [];
+    const createEffect = fn => {
+        const effect = () => {
+            runningEffects.push(effect)
+            fn()
+            runningEffects.pop()
+        }
+        effect()
+    }
+    const sum = () => {
+        console.log('run sum')
+        const a =  document.getElementById('a').value;
+        const b =  document.getElementById('b').value;
+        document.getElementById('result').innerText = 3;
+    }
+    // createEffect(sum);
+</script>
+</body>
+</html>
